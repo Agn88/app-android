@@ -26,11 +26,7 @@ public class Aluno implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return nome + " - " + email;
     }
 
     public String getNome() {
