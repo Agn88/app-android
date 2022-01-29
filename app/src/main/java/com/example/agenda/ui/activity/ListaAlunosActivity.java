@@ -3,16 +3,11 @@ package com.example.agenda.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,9 +16,6 @@ import com.example.agenda.dao.AlunoDAO;
 import com.example.agenda.model.Aluno;
 import com.example.agenda.ui.activity.adapter.ListaAlunosAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ListaAlunosActivity extends AppCompatActivity {
 
@@ -40,8 +32,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
         configuraFabNovoAluno();
         configuraLista();
 
-        dao.salva(new Aluno("Agnaldo", "489449494", "agn_jr@outlook.com"));
-        dao.salva(new Aluno("Morgana", "312313414", "morgana@outlook.com"));
+
 
     }
 
@@ -90,8 +81,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
     }
 
     private void atualizaAlunos() {
-        adapter.clear();
-        adapter.addAll(dao.todos());
+        adapter.atualiza(dao.todos());
     }
 
 
@@ -129,5 +119,6 @@ public class ListaAlunosActivity extends AppCompatActivity {
 
         adapter = new ListaAlunosAdapter(this);
         listaDeAlunos.setAdapter(adapter);
+
     }
 }
