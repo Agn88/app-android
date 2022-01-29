@@ -26,7 +26,7 @@ public class Aluno implements Serializable {
     @NonNull
     @Override
     public String toString() {
-        return nome + " - " + email;
+        return nome + " - " + telefone;
     }
 
     public String getNome() {
